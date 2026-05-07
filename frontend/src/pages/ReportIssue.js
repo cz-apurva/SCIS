@@ -357,27 +357,7 @@ export default function ReportIssue({ user, onSuccess }) {
 
             {/* Severity + Email */}
             <div className="ri-row">
-              <div className="ri-field">
-                <label className="ri-label">Severity *</label>
-                <div className="ri-sev-grid">
-                  {[3,2,1].map(v=>{
-                    const sc = SEV_CFG[v];
-                    const sel = parseInt(form.severity)===v;
-                    return (
-                      <div key={v} className={`ri-sev-btn ${sel?'selected':''}`}
-                        style={sel?{background:sc.bg,borderColor:sc.color,color:sc.color}:{}}
-                        onClick={()=>setForm(f=>({...f,severity:String(v)}))}>
-                        <div className="ri-sev-dot" style={{background:sc.color}}/>
-                        <div>
-                          <div className="ri-sev-label">{sc.label}</div>
-                          <div className="ri-sev-hint">{sc.hint}</div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                {errors.severity && <div className="ri-err">{errors.severity}</div>}
-              </div>
+              
 
               <div className="ri-field">
                 <label className="ri-label">
